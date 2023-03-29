@@ -55,15 +55,14 @@ export default function Paginator({
 							<ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
 						</span>
 						{pages.map((page) => (
-							<a
+							<button
 								key={`paginator-${page}`}
-								href="#"
 								aria-current="page"
 								className={isActiveClass(page)}
 								onClick={() => handlePage(page)}
 							>
 								{page}
-							</a>
+							</button>
 						))}
 						<span
 							onClick={handleNext}

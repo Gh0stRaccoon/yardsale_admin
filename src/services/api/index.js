@@ -1,5 +1,7 @@
 const API = process.env.NEXT_PUBLIC_API_URL;
 const VERSION = process.env.NEXT_PUBLIC_API_VERSION;
+const CLOUDINARY_API = process.env.NEXT_PUBLIC_C_API;
+const CLOUDINARY_CLOUD_NAME = process.env.NEXT_PUBLIC_C_CLOUD_NAME;
 
 export const endPoints = {
 	auth: {
@@ -34,5 +36,9 @@ export const endPoints = {
 	files: {
 		upload: `${API}/api/${VERSION}/files/upload`,
 		get: (filename) => `${API}/api/${VERSION}/files/${filename}`,
+	},
+	images: {
+		upload: `${CLOUDINARY_API}/${CLOUDINARY_CLOUD_NAME}/image/upload`,
+		delete: `${CLOUDINARY_API}/${CLOUDINARY_CLOUD_NAME}/image/destroy`,
 	},
 };
