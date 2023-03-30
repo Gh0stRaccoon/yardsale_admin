@@ -5,6 +5,7 @@ import { errorHandling } from 'utils/errorHandling';
 import { ArrowPathIcon, XCircleIcon } from '@heroicons/react/20/solid';
 import { useRouter } from 'next/router';
 import { deleteImage, uploadImage } from '@/services/api/images';
+import Image from 'next/image';
 
 export default function FormProduct({ setOpen, setAlert, product }) {
 	const router = useRouter();
@@ -191,7 +192,8 @@ export default function FormProduct({ setOpen, setAlert, product }) {
 												onClick={() => handleImgRemove(image)}
 												className="bg-white rounded-full text-red-400 w-5 h-5 -top-2 -right-2 absolute"
 											/>
-											<img
+											<Image
+												fill
 												src={image.secure_url}
 												className="rounded-md h-full object-cover"
 											/>

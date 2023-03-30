@@ -2,6 +2,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { Transition } from '@headlessui/react';
 import { ExclamationTriangleIcon } from '@heroicons/react/24/solid';
 import { LockClosedIcon } from '@heroicons/react/24/solid';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useRef } from 'react';
 
@@ -25,7 +26,9 @@ export default function LoginPage() {
 			<div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
 				<div className="w-full max-w-md space-y-8">
 					<div>
-						<img
+						<Image
+							width={36}
+							height={36}
 							className="mx-auto h-12 w-auto"
 							src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
 							alt="Your Company"
