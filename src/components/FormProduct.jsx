@@ -63,14 +63,12 @@ export default function FormProduct({ setOpen, setAlert, product }) {
 
 	const handleImgRemove = async (image) => {
 		const data = await deleteImage(image);
-		console.log(data);
 		setImages((prevState) =>
 			prevState.filter((prevImage) => prevImage.public_id !== image.public_id)
 		);
 	};
 
 	useEffect(() => {
-		console.log(product);
 		if (product) {
 			setImages(
 				product.images.map((image) => ({

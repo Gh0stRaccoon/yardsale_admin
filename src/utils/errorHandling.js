@@ -7,7 +7,6 @@ export const errorHandling = (error, setErrors) => {
 			break;
 		case 'AxiosError':
 			if (error.response) {
-				console.log('response');
 				setErrors({ general: error.response.data.message[0] });
 			} else if (error.request) {
 				if (error.request.readyState === 4 && error.request.status === 0) {

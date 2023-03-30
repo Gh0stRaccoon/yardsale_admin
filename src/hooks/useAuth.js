@@ -33,7 +33,6 @@ export function useProviderAuth() {
 				axios.defaults.headers.Authorization = `Bearer ${access_token}`;
 				const { data } = await axios.get(endPoints.auth.profile);
 
-				console.log(data);
 				setUser(data);
 			}
 		} catch (error) {
